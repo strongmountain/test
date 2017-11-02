@@ -5,3 +5,4 @@ another test
 blah
 a
 a
+b
