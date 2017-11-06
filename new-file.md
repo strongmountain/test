@@ -6,4 +6,4 @@ blah
 a
 a
 b
-status
+statuses
