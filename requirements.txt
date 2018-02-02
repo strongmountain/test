@@ -1,5 +1,4 @@
 python-jose
 psycopg2
 django
-python-memcache
 pypdf2
