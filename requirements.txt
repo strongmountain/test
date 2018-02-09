@@ -1,4 +1,3 @@
 python-jose
 psycopg2
 django
-pypdf2
