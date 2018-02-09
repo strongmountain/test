@@ -1,3 +1,4 @@
 python-jose
 psycopg2
 django
+octokit
