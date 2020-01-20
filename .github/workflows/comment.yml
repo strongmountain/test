@@ -1,6 +1,8 @@
-name: Python application
+name: Comments
 
-on: [pull_request]
+on:
+  issue_comment:
+    types: [created, edited]
 
 jobs:
   build:
@@ -18,6 +20,7 @@ jobs:
     - name: Run script
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_EVENT: ${{ github.event }}
       run: |
         env
-        python .github/workflows/bot.py
+        python .github/workflows/chatbot.py
