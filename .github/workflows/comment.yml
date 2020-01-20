@@ -20,7 +20,7 @@ jobs:
     - name: Run script
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_EVENT: ${{ github.event }}
+        GITHUB_EVENT: ${{ toJson(github.event) }}
       run: |
         env
         python .github/workflows/chatbot.py
