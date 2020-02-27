@@ -27,5 +27,5 @@ headers = {
     "Content-Type": "application/json",
 }
 
-response = octokit.checks.create_a_check_run(owner=owner, repo=repo, **params, **headers)
+response = octokit.checks.create_a_check_run(owner=owner, repo=repo, **params, headers=headers)
 print(response.json)
