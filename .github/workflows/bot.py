@@ -48,4 +48,5 @@ params2 = {
         "annotations": annotations,
     },
 }
-check_run.checks.update_a_check_run(owner=owner, repo=repo, check_run_id=check_run.response.id, **params2)
+update_run = check_run.checks.update_a_check_run(owner=owner, repo=repo, check_run_id=check_run.response.id, **params2)
+print(update_run.json)
