@@ -27,5 +27,25 @@ headers = {
     "Content-Type": "application/json",
 }
 
-response = octokit.checks.create_a_check_run(owner=owner, repo=repo, **params, headers=headers)
-print(response.json)
+check_run = octokit.checks.create_a_check_run(owner=owner, repo=repo, **params, headers=headers)
+print(check_run.json)
+
+annotations = [
+    {
+        "path": ".github/workflows/bot.py",
+        "start_line": 33,
+        "end_line": 39,
+        "annotation_level": "notice",
+        "message": "I'm recursive! ;)",
+    }
+]
+params2 = {
+    "conclusion": "work fanstastical",
+    "output": {
+        "title": "The end of all things are near!",
+        "summary": "**The sky is falling**",
+        "text": "_no it's not_",
+        "annotations": annotations,
+    },
+}
+check_run.checks.update_a_check_run(**params2)
