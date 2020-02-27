@@ -12,7 +12,7 @@ octokit.issues.create_comment(owner=owner, repo=repo, issue_number=number, body=
 
 event_path = os.environ.get('GITHUB_EVENT_PATH')
 with open(event_path) as event_file:
-    event = json.load(event_file))
+    event = json.load(event_file)
 
 params = {
     "name": "check run!",
