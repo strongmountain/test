@@ -17,5 +17,10 @@ event_path = os.environ.get("GITHUB_EVENT_PATH")
 with open(event_path) as event_file:
     event = json.load(event_file)
 
-params = {"name": "check run!", "head_sha": event["pull_request"]["head"]["sha"]}
-octokit.checks.create_a_check_run(owner=owner, repo=repo, **params)
+params = {
+    "name": "check run!",
+    "head_sha": event["pull_request"]["head"]["sha"],
+    "output": {"title": "Mighty Readme report", "summary": "", "text": ""},
+}
+response = octokit.checks.create_a_check_run(owner=owner, repo=repo, **params)
+print(response.json)
