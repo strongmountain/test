@@ -18,4 +18,4 @@ with open(event_path) as event_file:
     event = json.load(event_file)
 
 params = {"name": "check run!", "head_sha": event["pull_request"]["head"]["sha"]}
-octokit.checks.runs.create_a_check_run(owner=owner, repo=repo, **params)
+octokit.checks.create_a_check_run(owner=owner, repo=repo, **params)
