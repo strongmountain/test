@@ -40,7 +40,7 @@ annotations = [
     }
 ]
 params2 = {
-    "conclusion": "work fanstastical",
+    "conclusion": "success",
     "output": {
         "title": "The end of all things are near!",
         "summary": "**The sky is falling**",
